@@ -1,0 +1,389 @@
+:root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #e5e7eb;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-image: url("\lofibg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* nice parallax effect */
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.45); 
+  backdrop-filter: blur(2px); 
+  z-index: -1;
+}
+
+
+.app-root {
+  min-height: 100vh;
+  color: #e5e7eb;
+  background: transparent; 
+}
+
+
+.app-header {
+  margin: 0 auto;
+  max-width: 960px;
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.header-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.header-subtitle {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.visit-text {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.quote-text {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #facc15;
+}
+
+.app-grid {
+  max-width: 960px;
+  margin: 0 auto 40px auto;
+  padding: 0 16px 24px 16px;
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1.3fr);
+  gap: 16px;
+}
+
+@media (max-width: 800px) {
+  .app-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.card {
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 16px;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px); 
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+}
+
+
+.section-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.task-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-form-row {
+  display: flex;
+  gap: 10px;
+}
+
+.task-form-row .textarea {
+  resize: vertical;
+  min-height: 40px;
+}
+
+.input {
+  background: #020617;
+  border-radius: 10px;
+  border: 1px solid #475569;
+  color: #e5e7eb;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+}
+
+.input:focus {
+  outline: 2px solid #38bdf8;
+  outline-offset: 1px;
+}
+
+.input.select {
+  min-width: 140px;
+}
+
+.btn {
+  border-radius: 999px;
+  border: none;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: transform 0.08s ease, box-shadow 0.08s ease, opacity 0.08s;
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, #38bdf8, #6366f1);
+  color: white;
+  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.4);
+}
+
+.btn.danger {
+  background: #ef4444;
+  color: white;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+.btn:active {
+  transform: translateY(1px);
+  opacity: 0.85;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.task-main {
+  flex: 1;
+}
+
+.task-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.task-title {
+  font-weight: 500;
+}
+
+.task-title-done {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+.task-description {
+  font-size: 0.9rem;
+  margin-top: 4px;
+  color: #cbd5f5;
+}
+
+.task-meta {
+  font-size: 0.75rem;
+  margin-top: 4px;
+  color: #94a3b8;
+}
+
+.task-completed {
+  background: rgba(22, 163, 74, 0.15);
+  border-color: rgba(22, 163, 74, 0.6);
+}
+
+.pill {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.pill-high {
+  background: rgba(248, 113, 113, 0.25);
+  color: #fecaca;
+}
+
+.pill-medium {
+  background: rgba(250, 204, 21, 0.2);
+  color: #facc15;
+}
+
+.pill-low {
+  background: rgba(45, 212, 191, 0.2);
+  color: #5eead4;
+}
+
+.muted {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+/* stats */
+.stats-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stats-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.stats-title {
+  font-weight: 500;
+}
+
+.stats-number {
+  font-weight: 600;
+}
+
+.stats-bar-outer {
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background: #020617;
+  overflow: hidden;
+  border: 1px solid #1f2937;
+}
+
+.stats-bar-inner {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #22c55e, #a3e635);
+}
+
+.stats-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+/* right-side widgets */
+.widget-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.widget {
+  background: rgba(0, 131, 131, 0.9);
+  border-radius: 16px;
+  padding: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.5);
+  margin-bottom: 16px;
+}
+.filter-row {
+  display: flex;
+  gap: 8px;
+  margin: 8px 0 4px;
+}
+
+.chip {
+  border-radius: 999px;
+  border: 1px solid #4b5563;
+  background: transparent;
+  color: #e5e7eb;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.chip-active {
+  background: #38bdf8;
+  border-color: #38bdf8;
+  color: #020617;
+}
+.chip:hover {
+  opacity: 0.9;
+}
+.chip:active {
+  opacity: 0.8;
+}
+.lofi-player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.lofi-controls {
+  display: flex;
+  gap: 12px;
+}
+.lofi-select {
+  background: #85037a;
+  border-radius: 10px;
+  border: 1px solid #475569;
+  color: #e5e7eb;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+}
+
+.grid-side {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.focus-timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.focus-time-display {
+  font-size: 3rem;
+  font-weight: 600;
+}
+.focus-timer-buttons {
+  display: flex;
+  gap: 12px;
+}
+.focus-timer .btn {
+  padding: 8px 20px;
+} 
+.focus-timer .btn.primary {
+  background: linear-gradient(135deg, #34d399, #10b981);
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+}
+.focus-timer .btn.danger {
+  background: #ffa443;
+} 
+
+/*trying*/
+
